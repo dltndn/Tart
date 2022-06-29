@@ -3,11 +3,13 @@ import Navigation from './components/Navigation';
 
 function App() {
   return (
-    <div className="App">
-      <Navigation />
-     프로젝트 시작
-     test
-    </div>
+    <BrowserRouter basename="comento-shop">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/product/:productId" element={<ProductDetail />} />
+        <Route path="/basket" element={<Basket />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
