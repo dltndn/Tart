@@ -9,10 +9,13 @@ const Home = () => {
     <div>
       <div>
         <Navigation />
-        <ThemeButton name={"# 겨울 방한템"} />
-        <ThemeButton name={"# 따순머그컵"} />
+        <ThemeButtonFrame>
+          <ThemeButton name={"# 겨울 방한템"} orederNum={0}/>
+          <ThemeButton name={"# 따순머그컵"} orederNum={1}/>
+        </ThemeButtonFrame>
+        <ThemeButtonLine />
       </div>
-      <div>
+      <div style={{"position": "absolute"}}>
         <ProductCard
           name={"비숑 블랙 머그잔"}
           description={
@@ -45,4 +48,25 @@ const Home = () => {
   );
 };
 
+const ThemeButtonFrame = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 42px 24px 40px;
+  gap: 12px;
+
+  width: 302px;
+  height: 75px;
+  left: 24px;
+  top: 106px;
+`;
+
+const ThemeButtonLine = styled.div`
+  width: 390px;
+  height: 8px;
+  left: 0px;
+  top: 221px;
+
+  background: #EEEEEE;
+`;
 export default Home;
