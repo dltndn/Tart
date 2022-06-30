@@ -31,7 +31,7 @@ const Home = () => {
             "언제나 따뜻하게 최대 12시간 동안 최대 60도의 온도로 따듯한 차를 즐길 수 있습니다."
           }
           thumbnail={
-            "https://raw.githubusercontent.com/congchu/coment-shop-server/master/assets/images/product2.jpg"
+            "https://raw.githubusercontent.com/congchu/coment-shop-server/master/assets/images/product3.jpg"
           }
         />
         <ProductCard
@@ -40,7 +40,7 @@ const Home = () => {
             "솜사탕처럼 부드러운 쉐입에 스트라이프 조각이 더해져 심플하면서도 세련된 파스텔 컬러의 머그"
           }
           thumbnail={
-            "https://raw.githubusercontent.com/congchu/coment-shop-server/master/assets/images/product3.jpg"
+            "https://raw.githubusercontent.com/congchu/coment-shop-server/master/assets/images/product2.jpg"
           }
         />
       </div>
