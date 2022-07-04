@@ -7,6 +7,7 @@ import ProductCard from "../components/ProductCard";
 const Home = () => {
   return (
     <div>
+      <PageStyle>
       <div>
         <Navigation />
         <ThemeButtonFrame>
@@ -44,11 +45,21 @@ const Home = () => {
           }
         />
       </div>
+      </PageStyle>
     </div>
   );
 };
 
+const PageStyle = styled.div`
+  position: relative;
+  width: 390px;
+  height: 1554px;
+
+  background: #ffffff;
+`;
+
 const ThemeButtonFrame = styled.div`
+
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -58,10 +69,11 @@ const ThemeButtonFrame = styled.div`
   width: 302px;
   height: 75px;
   left: 24px;
-  top: 106px;
+  top: 0;
 `;
 
 const ThemeButtonLine = styled.div`
+
   width: 390px;
   height: 8px;
   left: 0px;
