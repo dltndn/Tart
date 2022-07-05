@@ -16,9 +16,15 @@ const ProductDetail = () => {
           }
           name={"비숑 블랙 머그잔"}
         ></ProductImg>
-        <ProductName name={"비숑 블랙 머그잔"}/>
+        <ProductName name={"비숑 블랙 머그잔"} />
         <ProductCost cost={"21,800원"} />
         <MenuTab />
+        <ProductDetailPicture
+          src={
+            "https://s3-alpha-sig.figma.com/img/c5a8/8a6e/631bf5d8910e14d240707cfe44bad95a?Expires=1658102400&Signature=ZrvfvfYDQECQ-XMgBt~L4EKd2fyj9KSnXau6xQyyHc~W6-5p8gwjLLi7rmS8C-oqVwTSCJJwMP~KCC1ma-xpqeHLltyeDPOCp56a4588eB5nyXpjAppo6crocsDQXZbtg-EpDqLv7ykCxXdFpkqAb6F9J6ivBZeO22NqMR-KGkt-IXJB4qPF~2I1s1HpkJCpLo0MrlneKhWsahOjAtCQY7UfjM1QcOMjB51iaiUt5Eq~dj4cVvjSqHHGeONQmAKoIdEonsDLKOl1gxxbtufamiHZi7rrGIQiVgwOe~Of8~Nk9j1EdXfuwrHX6le-7I4Xn0Z-42qznIRReTA5DgRYZg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+          }
+          alt={"상품 상세 설명"}
+        />
       </PageStyle>
     </div>
   );
@@ -32,5 +38,12 @@ const PageStyle = styled.div`
   background: #ffffff;
 `;
 
+const ProductDetailPicture = styled.img`
+  position: absolute;
+  width: 342px;
+  height: 1188.21px;
+  left: 24px;
+  top: 659px;
+`;
 
 export default ProductDetail;
