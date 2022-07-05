@@ -4,6 +4,7 @@ import ProductImg from "../utils/ProductImg";
 import ProductName from "../components/ProductName";
 import ProductCost from "../components/ProductCost";
 import MenuTab from "../components/ProductMenuTab";
+import BottomBtn from "../components/BottomBtn";
 
 const ProductDetail = () => {
   return (
@@ -25,6 +26,7 @@ const ProductDetail = () => {
           }
           alt={"상품 상세 설명"}
         />
+        <BottomBtn />
       </PageStyle>
     </div>
   );
