@@ -5,11 +5,16 @@ import ProductName from "../components/ProductName";
 import ProductCost from "../components/ProductCost";
 import MenuTab from "../components/ProductMenuTab";
 import BottomBtn from "../components/BottomBtn";
+import BackIcon from "../components/BackIcon";
+import { Link } from "react-router-dom";
 
 const ProductDetail = () => {
   return (
     <div>
       <PageStyle>
+        <Link to="/">
+          <BackIcon />
+        </Link>
         <Navigation />
         <ProductImg
           thumbnail={
