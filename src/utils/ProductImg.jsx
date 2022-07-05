@@ -6,8 +6,8 @@ const ProductImg = ({name, thumbnail}) => {
             <ImgStyle src={thumbnail} alt={name}>
             </ImgStyle>
         </div>
-    )
-}
+    );
+};
 
 const ImgStyle = styled.img`
     position: absolute;

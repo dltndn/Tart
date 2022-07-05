@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import Navigation from "../components/Navigation";
 import ProductImg from "../utils/ProductImg";
+import ProductName from "../components/ProductName";
+import ProductCost from "../components/ProductCost";
+import MenuTab from "../components/ProductMenuTab";
 
 const ProductDetail = () => {
   return (
@@ -13,6 +16,9 @@ const ProductDetail = () => {
           }
           name={"비숑 블랙 머그잔"}
         ></ProductImg>
+        <ProductName name={"비숑 블랙 머그잔"}/>
+        <ProductCost cost={"21,800원"} />
+        <MenuTab />
       </PageStyle>
     </div>
   );
@@ -25,5 +31,6 @@ const PageStyle = styled.div`
 
   background: #ffffff;
 `;
+
 
 export default ProductDetail;
