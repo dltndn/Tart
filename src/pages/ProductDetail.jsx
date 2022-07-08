@@ -6,15 +6,23 @@ import ProductCost from "../components/ProductCost";
 import MenuTab from "../components/ProductMenuTab";
 import BottomBtn from "../components/BottomBtn";
 import BackIcon from "../components/BackIcon";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { mockTheme1Produdcts, mockTheme2Produdcts } from "../data/mockData";
 
 const ProductDetail = () => {
+  
+  let { productId } = useParams();
+  productId = Number(productId);
+  mockTheme1Produdcts.map((prod) => prod.id === productId ? console.log(prod): console.log("아님"));
+  
+
+  const navigate = useNavigate();
+
   return (
     <div>
       <PageStyle>
-        <Link to="/">
-          <BackIcon />
-        </Link>
+        <BackIcon onClick={() => navigate("/")}/>
         <Navigation />
         <ProductImg
           thumbnail={

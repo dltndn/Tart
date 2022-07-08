@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-const BackIcon = () => {
+const BackIcon = ( {onClick}) => {
   return (
     <div>
-      <ExGroup>
+      <ExGroup onClick={onClick}>
         <Icon></Icon>
       </ExGroup>
     </div>
