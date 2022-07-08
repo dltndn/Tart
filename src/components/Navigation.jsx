@@ -13,6 +13,7 @@ return (<div>
 };
 
 const NavigationStyle = styled.div`
+  /* position: absolute; */
   width: 390px;
   height: 66px;
   left: 0px;
