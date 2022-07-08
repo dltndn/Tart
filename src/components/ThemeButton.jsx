@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-const ThemeButton = ({name, orederNum})=> {
+const ThemeButton = ({name, orederNum, onClick})=> {
     return (<div>
         <ThemeGroup orederNum = {orederNum}>
-            <ThemeBox>
+            <ThemeBox onClick={onClick}>
                 <ThemeText>
                     <div>{name}</div>
                 </ThemeText>
