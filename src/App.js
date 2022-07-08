@@ -9,7 +9,6 @@ function App() {
     <BrowserRouter basename="comento-shop">
       <Routes>
         <Route exact path="/" element={<Home />} />
-        {/* <Route path='/product/:productId' component={ProductDetail} /> */}
         <Route path='/product/:productId' element={<ProductDetail/>} />
         <Route path="/basket" element={<Basket />} />
       </Routes>
