@@ -10,6 +10,8 @@ const ProductImg = ({ name, thumbnail }) => {
 
 const ImgStyle = styled.img`
   position: absolute;
+  width: 390px;
+  height: 420px;
   left: 0%;
   right: 0%;
   top: 4.05%;

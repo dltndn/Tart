@@ -123,6 +123,7 @@ const ProductReviewSection = styled.div`
 
   display: flex;
   flex-direction: column;
+  gap: 16px;
 `;
 
 const ProductReviewPicture = styled.img`
