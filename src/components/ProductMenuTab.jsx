@@ -1,27 +1,31 @@
 import styled from "styled-components";
 
-const MenuTab = () => {
+const MenuTab = ( { onClickMenuButton} ) => {
+  const onClick1 = () => {
+    onClickMenuButton(1);
+  }
+
+  const onClick2 = () => {
+    onClickMenuButton(2);
+  }
+
   return (
     <div>
       <MenuTabBox>
-        <TobBAr />
-        <ExGroup left={"0%"} right={"50%"}>
-          <InnerGroup left={"0%"} right={"-100%"}>
-            <GroupBg left={"0%"} right={"50%"} bg={"#EEEEEE"}>
+        <TopBAr />
+        <ExGroup left={"0%"} right={"50%"} onClick={onClick1}>
+            <GroupBg left={"0%"} right={"0%"} bg={"#EEEEEE"}>
               <DescriptionFont left={"17.87%"} right={"17.75%"} weight={"700"}>
                 상품설명
               </DescriptionFont>
             </GroupBg>
-          </InnerGroup>
         </ExGroup>
-        <ExGroup left={"50%"} right={"0%"}>
-          <InnerGroup left={"-100%"} right={"0%"}>
-            <GroupBg left={"50%"} right={"0%"} bg={"#FFFFFF"}>
+        <ExGroup left={"50%"} right={"0%"} onClick={onClick2}> 
+            <GroupBg left={"0%"} right={"0%"} bg={"#FFFFFF"}>
               <DescriptionFont left={"13.46%"} right={"8.16%"} weight={"400"}>
                 상품후기
               </DescriptionFont>
             </GroupBg>
-          </InnerGroup>
         </ExGroup>
         <BottomBar />
       </MenuTabBox>
@@ -37,7 +41,7 @@ const MenuTabBox = styled.div`
   top: 586px;
 `;
 
-const TobBAr = styled.div`
+const TopBAr = styled.div`
   position: absolute;
   width: 390px;
   height: 1px;
@@ -72,14 +76,6 @@ const DescriptionFont = styled.div`
   letter-spacing: -0.01em;
 
   color: #000000;
-`;
-
-const InnerGroup = styled.div`
-  position: absolute;
-  left: ${(props) => props.left};
-  right: ${(props) => props.right};
-  top: 0%;
-  bottom: 2.04%;
 `;
 
 const GroupBg = styled.div`
