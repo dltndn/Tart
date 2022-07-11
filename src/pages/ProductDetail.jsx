@@ -38,9 +38,9 @@ const ProductDetail = () => {
   };
 
   useEffect(() => {
-    const productData = getProductData(productId);
+    let productData = getProductData(productId);    
     setProduct(productData);
-  }, []);
+  }, [productId]);
 
   const navigate = useNavigate();
 
