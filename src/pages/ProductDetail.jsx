@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Navigation from "../components/Navigation";
-import ProductImg from "../utils/ProductImg";
+import ProductImg from "../components/ProductImg";
 import ProductName from "../components/ProductName";
 import ProductCost from "../components/ProductCost";
 import MenuTab from "../components/ProductMenuTab";
