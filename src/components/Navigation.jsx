@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-const Navigation = ()=> {
+const Navigation = ( { name } )=> {
 return (<div>
     <NavigationStyle>
         <NavigationTitle>
-          <div>코멘토 쇼핑</div>
+          <div>{name}</div>
         </NavigationTitle>
     </NavigationStyle>
     <NavigationLine />

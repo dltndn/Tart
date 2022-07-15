@@ -50,7 +50,7 @@ const ProductDetail = () => {
       {product && (
         <PageStyle>
           <BackIcon onClick={() => navigate("/")} />
-          <Navigation />
+          <Navigation name={"코멘토 쇼핑"}/>
           <ProductImg
             thumbnail={product.thumbnail}
             name={product.name}

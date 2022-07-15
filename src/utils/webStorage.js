@@ -12,7 +12,6 @@ export const addBasket = (product) => {
     // ✅ 설명: webStorage는 key-value 구조로 문자열만 저장할 수 있습니다.
     localStorage.setItem(BASKET, JSON.stringify(basketItems));
   }
-  console.log(localStorage.getItem(BASKET));
 };
 
 // 장바구니에서 동일한 id를 가진 상품 제거
