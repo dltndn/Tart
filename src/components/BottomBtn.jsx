@@ -1,9 +1,12 @@
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const BottomBtn = () => {
+  const navigate = useNavigate();
+
   return (
     <div>
-      <ExGroup>
+      <ExGroup onClick={() => navigate("/basket")}>
         <Rectangle>
             <FontStyle>장바구니 담기</FontStyle>
         </Rectangle>
