@@ -26,7 +26,7 @@ const Basket = () => {
   useEffect(() => {
     const items = webStorage.getBasketItems();
     let price = 0;
-    items.map((product) => {
+    items.forEach((product) => {
       let ss = product.price;
       ss = ss.replace("원", "");
       ss = ss.replace(",", "");
