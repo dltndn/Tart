@@ -54,7 +54,7 @@ const Basket = () => {
           <RightRectangle>
             <FontStyle width={"63px"} color={"rgba(0, 0, 0, 0.86)"} order={"0"}>47,000 원</FontStyle>
             <FontStyle width={"55px"} color={"rgba(0, 0, 0, 0.86)"} order={"1"}>3,000 원</FontStyle>
-            <FontStyle width={"63px"} color={"rgba(0, 0, 0, 0.86)"} order={"2"}>50,000 원</FontStyle>
+            <FontStyle width={"64px"} color={"rgba(0, 0, 0, 0.86)"} order={"2"}>50,000 원</FontStyle>
           </RightRectangle>
       </PageStyle>
     </div>
