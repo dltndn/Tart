@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import * as webStorage from "../utils/webStorage";
 import BottomBtn from "../components/BottomBtn";
+import useConfirm from "../utils/useConfirm";
 
 const Basket = () => {
   const navigate = useNavigate();
@@ -25,10 +26,10 @@ const Basket = () => {
   useEffect(() => {
     const items = webStorage.getBasketItems();
     let price = 0;
-    items.map ((product) => {
+    items.map((product) => {
       let ss = product.price;
-      ss = ss.replace("원", '');
-      ss = ss.replace(",", '');
+      ss = ss.replace("원", "");
+      ss = ss.replace(",", "");
       ss = Number(ss);
       price += ss;
     });
@@ -38,13 +39,21 @@ const Basket = () => {
 
   const onClickRemoveButton = (productId) => {
     let price = webStorage.getBasketItemsIndex(productId);
-    price = price.replace("원", '');
-      price = price.replace(",", '');
-      price = Number(price);
+    price = price.replace("원", "");
+    price = price.replace(",", "");
+    price = Number(price);
     setItemsPrice(itemsPrice - price);
     webStorage.removeBasketItem(productId);
     setBasketItemCount(basketItems.length - 1);
   };
+
+  const ok = () => {
+    navigate("/");
+  };
+
+  const cancel = () => {};
+
+  const confirmOnClick = useConfirm("주문 하시겠습니까?", ok, cancel);
 
   return (
     <div>
@@ -62,19 +71,34 @@ const Basket = () => {
               onClickRemoveButton={() => onClickRemoveButton(product.id)}
             />
           ))}
-          <LeftRectangle>
-            <FontStyle width={"99px"} color={"#616161"} order={"0"}>상품 금액 ({basketItemCount}개)</FontStyle>
-            <FontStyle width={"44px"} color={"#616161"} order={"1"}>배송비</FontStyle>
-            <FontStyle width={"77px"} color={"#616161"} order={"2"}>총 결제금액</FontStyle>
-          </LeftRectangle>
-          <RightRectangle>
-            <FontStyle width={"66px"} color={"rgba(0, 0, 0, 0.86)"} order={"0"}>{itemsPrice} 원</FontStyle>
-            <FontStyle width={"55px"} color={"rgba(0, 0, 0, 0.86)"} order={"1"}>3,000 원</FontStyle>
-            <FontStyle width={"66px"} color={"rgba(0, 0, 0, 0.86)"} order={"2"}>{itemsPrice + 3000} 원</FontStyle>
-          </RightRectangle>
-          <BottomBtn 
-          onClick={() => console.log("확인")}
-          title={"주문하기"}/>
+        <LeftRectangle>
+          <FontStyle width={"99px"} color={"#616161"} order={"0"}>
+            상품 금액 ({basketItemCount}개)
+          </FontStyle>
+          <FontStyle width={"44px"} color={"#616161"} order={"1"}>
+            배송비
+          </FontStyle>
+          <FontStyle width={"77px"} color={"#616161"} order={"2"}>
+            총 결제금액
+          </FontStyle>
+        </LeftRectangle>
+        <RightRectangle>
+          <FontStyle width={"66px"} color={"rgba(0, 0, 0, 0.86)"} order={"0"}>
+            {itemsPrice} 원
+          </FontStyle>
+          <FontStyle width={"55px"} color={"rgba(0, 0, 0, 0.86)"} order={"1"}>
+            3,000 원
+          </FontStyle>
+          <FontStyle width={"66px"} color={"rgba(0, 0, 0, 0.86)"} order={"2"}>
+            {itemsPrice + 3000} 원
+          </FontStyle>
+        </RightRectangle>
+        <BottomBtn
+          onClick={() => {
+            confirmOnClick();
+          }}
+          title={"주문"}
+        />
       </PageStyle>
     </div>
   );
@@ -127,7 +151,7 @@ const FontStyle = styled.div`
 
   letter-spacing: -0.01em;
 
-  color:${(props) => props.color};
+  color: ${(props) => props.color};
 
   flex: none;
   order: ${(props) => props.order};
