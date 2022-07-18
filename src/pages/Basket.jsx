@@ -45,17 +45,6 @@ const Basket = () => {
     setBasketItemCount(basketItems.length - 1);
   };
 
-  // const sumPrice = () => {
-  //   let price = 0;
-  //   basketItems.map((product) => {
-  //     let ss = product.price;
-  //     ss = ss.replace("원", '');
-  //     ss = ss.replace(",", '');
-  //     ss = Number(ss);
-  //     price += ss;
-  //   })
-  // }
-
   return (
     <div>
       <PageStyle>
@@ -80,7 +69,7 @@ const Basket = () => {
           <RightRectangle>
             <FontStyle width={"66px"} color={"rgba(0, 0, 0, 0.86)"} order={"0"}>{itemsPrice} 원</FontStyle>
             <FontStyle width={"55px"} color={"rgba(0, 0, 0, 0.86)"} order={"1"}>3,000 원</FontStyle>
-            <FontStyle width={"66px"} color={"rgba(0, 0, 0, 0.86)"} order={"2"}>50,000 원</FontStyle>
+            <FontStyle width={"66px"} color={"rgba(0, 0, 0, 0.86)"} order={"2"}>{itemsPrice + 3000} 원</FontStyle>
           </RightRectangle>
       </PageStyle>
     </div>
