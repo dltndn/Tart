@@ -29,3 +29,10 @@ export const getBasketItems = () => {
   const basketItems = localStorage.getItem(BASKET);
   return basketItems ? JSON.parse(basketItems) : [];
 };
+
+// 장바구니에서 동일한 id를 가진 상품 가격정보 가져오기
+export const getBasketItemsIndex = (productId) => {
+  const basketItems = getBasketItems();
+  const basketItem = basketItems.filter((item) => item.id === productId)
+  return basketItem[0].price;
+}

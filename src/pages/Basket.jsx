@@ -11,6 +11,7 @@ const Basket = () => {
 
   const [basketItems, setBasketItems] = useState();
   const [basketItemCount, setBasketItemCount] = useState(0);
+  const [itemsPrice, setItemsPrice] = useState(0);
 
   // Basket이 렌더링 될때, 한번만 실행되는 로직
   useEffect(() => {
@@ -22,13 +23,38 @@ const Basket = () => {
   // [장바구니 상품 갯수]가 바뀌면, 실행되는 로직
   useEffect(() => {
     const items = webStorage.getBasketItems();
+    let price = 0;
+    items.map ((product) => {
+      let ss = product.price;
+      ss = ss.replace("원", '');
+      ss = ss.replace(",", '');
+      ss = Number(ss);
+      price += ss;
+    });
+    setItemsPrice(price);
     setBasketItems(items);
   }, [basketItemCount]);
 
   const onClickRemoveButton = (productId) => {
+    let price = webStorage.getBasketItemsIndex(productId);
+    price = price.replace("원", '');
+      price = price.replace(",", '');
+      price = Number(price);
+    setItemsPrice(itemsPrice - price);
     webStorage.removeBasketItem(productId);
     setBasketItemCount(basketItems.length - 1);
   };
+
+  // const sumPrice = () => {
+  //   let price = 0;
+  //   basketItems.map((product) => {
+  //     let ss = product.price;
+  //     ss = ss.replace("원", '');
+  //     ss = ss.replace(",", '');
+  //     ss = Number(ss);
+  //     price += ss;
+  //   })
+  // }
 
   return (
     <div>
@@ -47,14 +73,14 @@ const Basket = () => {
             />
           ))}
           <LeftRectangle>
-            <FontStyle width={"99px"} color={"#616161"} order={"0"}>상품 금액 (n개)</FontStyle>
+            <FontStyle width={"99px"} color={"#616161"} order={"0"}>상품 금액 ({basketItemCount}개)</FontStyle>
             <FontStyle width={"44px"} color={"#616161"} order={"1"}>배송비</FontStyle>
             <FontStyle width={"77px"} color={"#616161"} order={"2"}>총 결제금액</FontStyle>
           </LeftRectangle>
           <RightRectangle>
-            <FontStyle width={"63px"} color={"rgba(0, 0, 0, 0.86)"} order={"0"}>47,000 원</FontStyle>
+            <FontStyle width={"66px"} color={"rgba(0, 0, 0, 0.86)"} order={"0"}>{itemsPrice} 원</FontStyle>
             <FontStyle width={"55px"} color={"rgba(0, 0, 0, 0.86)"} order={"1"}>3,000 원</FontStyle>
-            <FontStyle width={"64px"} color={"rgba(0, 0, 0, 0.86)"} order={"2"}>50,000 원</FontStyle>
+            <FontStyle width={"66px"} color={"rgba(0, 0, 0, 0.86)"} order={"2"}>50,000 원</FontStyle>
           </RightRectangle>
       </PageStyle>
     </div>
