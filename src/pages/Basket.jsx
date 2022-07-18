@@ -5,6 +5,7 @@ import BasketItem from "../components/BasketItem";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import * as webStorage from "../utils/webStorage";
+import BottomBtn from "../components/BottomBtn";
 
 const Basket = () => {
   const navigate = useNavigate();
@@ -71,6 +72,9 @@ const Basket = () => {
             <FontStyle width={"55px"} color={"rgba(0, 0, 0, 0.86)"} order={"1"}>3,000 원</FontStyle>
             <FontStyle width={"66px"} color={"rgba(0, 0, 0, 0.86)"} order={"2"}>{itemsPrice + 3000} 원</FontStyle>
           </RightRectangle>
+          <BottomBtn 
+          onClick={() => console.log("확인")}
+          title={"주문하기"}/>
       </PageStyle>
     </div>
   );

@@ -95,6 +95,7 @@ const ProductDetail = () => {
               navigate("/basket");
               addBasket(product);
             }}
+            title={"장바구니 담기"}
           />
         </PageStyle>
       )}
