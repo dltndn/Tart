@@ -9,6 +9,7 @@ import BackIcon from "../components/BackIcon";
 import { useNavigate, useParams } from "react-router-dom";
 import { mockTheme1Produdcts, mockTheme2Produdcts } from "../data/mockData";
 import { useEffect, useState } from "react";
+import { addBasket } from "../utils/webStorage";
 
 const ProductDetail = () => {
   let { productId } = useParams();
@@ -38,7 +39,7 @@ const ProductDetail = () => {
   };
 
   useEffect(() => {
-    let productData = getProductData(productId);    
+    let productData = getProductData(productId);
     setProduct(productData);
   }, [productId]);
 
@@ -49,16 +50,14 @@ const ProductDetail = () => {
       {product && (
         <PageStyle>
           <BackIcon onClick={() => navigate("/")} />
-          <Navigation />
+          <Navigation name={"코멘토 쇼핑"}/>
           <ProductImg
             thumbnail={product.thumbnail}
             name={product.name}
           ></ProductImg>
           <ProductName name={product.name} />
           <ProductCost cost={product.price} />
-          <MenuTab
-            onClickMenuButton = {onClickMenuButton}
-          />
+          <MenuTab onClickMenuButton={onClickMenuButton} />
           <>
             {menuNum === 1 && (
               <ProductDetailPicture
@@ -91,7 +90,13 @@ const ProductDetail = () => {
               </ProductReviewSection>
             )}
           </>
-          <BottomBtn />
+          <BottomBtn
+            onClick={() => {
+              navigate("/basket");
+              addBasket(product);
+            }}
+            title={"장바구니 담기"}
+          />
         </PageStyle>
       )}
     </div>

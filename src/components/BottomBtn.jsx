@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
-const BottomBtn = () => {
+const BottomBtn = ( { onClick, title }) => {
+
   return (
     <div>
-      <ExGroup>
+      <ExGroup onClick={onClick}>
         <Rectangle>
-            <FontStyle>장바구니 담기</FontStyle>
+            <FontStyle>{title}</FontStyle>
         </Rectangle>
       </ExGroup>
     </div>

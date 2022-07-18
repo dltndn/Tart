@@ -28,7 +28,7 @@ const Home = () => {
     <div>
       <PageStyle>
         <div>
-          <Navigation />
+          <Navigation name={"코멘토 쇼핑"}/>
           <ThemeButtonFrame>
             <ThemeButton
               name={"# 겨울방한템"}
