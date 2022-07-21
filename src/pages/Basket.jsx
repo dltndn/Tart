@@ -14,7 +14,7 @@ const Basket = () => {
   const [basketItems, setBasketItems] = useState();
   const [basketItemCount, setBasketItemCount] = useState(0);
   const [itemsPrice, setItemsPrice] = useState(0);
-
+                
   // Basket이 렌더링 될때, 한번만 실행되는 로직
   useEffect(() => {
     const items = webStorage.getBasketItems();
@@ -38,11 +38,6 @@ const Basket = () => {
   }, [basketItemCount]);
 
   const onClickRemoveButton = (productId) => {
-    let price = webStorage.getBasketItemsIndex(productId);
-    price = price.replace("원", "");
-    price = price.replace(",", "");
-    price = Number(price);
-    setItemsPrice(itemsPrice - price);
     webStorage.removeBasketItem(productId);
     setBasketItemCount(basketItems.length - 1);
   };
