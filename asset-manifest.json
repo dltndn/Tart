@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Tart/static/css/main.073c9b0a.css",
+    "main.js": "/Tart/static/js/main.ce5aab1b.js",
+    "index.html": "/Tart/index.html",
+    "main.073c9b0a.css.map": "/Tart/static/css/main.073c9b0a.css.map",
+    "main.ce5aab1b.js.map": "/Tart/static/js/main.ce5aab1b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.ce5aab1b.js"
+  ]
+}
