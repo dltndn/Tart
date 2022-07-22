@@ -27,11 +27,10 @@ const Basket = () => {
     const items = webStorage.getBasketItems();
     let price = 0;
     items.forEach((product) => {
-      let ss = product.price;
-      ss = ss.replace("원", "");
-      ss = ss.replace(",", "");
-      ss = Number(ss);
-      price += ss;
+      let currentPrice = product.price;
+      currentPrice = currentPrice.replace("원", "").replace(",", "");
+      currentPrice = Number(currentPrice);
+      price +=currentPrice;
     });
     setItemsPrice(price);
     setBasketItems(items);
